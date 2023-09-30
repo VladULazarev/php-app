@@ -1,0 +1,29 @@
+AddDefaultCharset UTF-8
+
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+ErrorDocument 404 /404.php
+RewriteRule ^([A-Za-z0-9-/]+)$ /index.php?query=$1 [L]
+
+Options -Indexes
+
+<IfModule mod_expires.c>
+    <FilesMatch ".(jpg|jpeg|png|gif|swf|ico|woff|woff2|css|eot|ttf|otf|js|svg)$">
+    ExpiresActive On
+    ExpiresDefault "access plus 5184000 seconds"
+    </FilesMatch>
+</IfModule>
+
+<IfModule mod_headers.c>
+    <FilesMatch ".(jpg|jpeg|png|gif|swf|ico|woff|woff2|css|eot|ttf|otf|js|svg)$">
+    Header set Cache-Control "max-age=5184000, public, must-revalidate"
+    Header unset ETag
+    FileETag None
+    </FilesMatch>
+</IfModule>
+
+php_flag display_errors Off
+
+

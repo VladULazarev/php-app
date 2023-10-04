@@ -94,11 +94,8 @@ class FunctionController extends Controller
      */
     public static function log($message): void
     {
-        $userId = $_SESSION['user_id'];
-        $userName = $_SESSION['user_name'];
-
-        if ($userId && $userName ) {
-            $userInfo = " ID пользователя: '$userId'. Login пользователя: '$userName'. ";
+        if (isset($_SESSION['user_id']) && isset($_SESSION['user_name'])) {
+            $userInfo = " ID пользователя: " . $_SESSION['user_id'] . " Login пользователя: " . $_SESSION['user_name'] . ". ";
         } else {
             $userInfo = " Неизвестный пользователь.";
         }

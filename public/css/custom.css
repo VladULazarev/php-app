@@ -105,7 +105,7 @@ textarea::-webkit-scrollbar {
     width: 100%;
     max-height: 66rem;
     position: relative;
-    background: url(/public/img/top.jpg) no-repeat 50% 50%;
+    background: #0e5386 url(/public/img/top.jpg) no-repeat 50% 50%;
     background-size: cover;
 }
 

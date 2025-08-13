@@ -5,7 +5,7 @@
 Протестировать online можно здесь:
 
 ```
-https://php-app.vlgroove.space/
+https://php-app.vl-groove.space/
 ```
 
 При создании приложения использовались: PHP 8.1, Tailwind, jQuery, HTML5, SQL.
